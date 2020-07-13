@@ -1,26 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
 namespace TechJobsOO
 {
-    public class PositionType:JobField
+    public abstract class JobField
     {
-        public PositionType(string value) : base(value) { }
-
-/*        public int Id { get; }
-        private static int nextId = 1;
+        public int Id { get; }
+        protected static int nextId = 1; // Have a static field in a base class doesn't cause a problem?
         public string Value { get; set; }
 
-        public PositionType()
+        public JobField()
         {
             Id = nextId;
             nextId++;
         }
 
-        public PositionType(string value) : this()
+        public JobField(string value): this()
         {
             Value = value;
         }
-
-        // TODO: Add custom Equals(), GetHashCode(), and ToString() methods.  DONE
 
         public override string ToString()
         {
@@ -29,13 +28,13 @@ namespace TechJobsOO
 
         public override bool Equals(object obj)
         {
-            return obj is PositionType type &&
-                   Id == type.Id;
+            return obj is JobField n &&
+                   Id == n.Id;
         }
 
         public override int GetHashCode()
         {
             return HashCode.Combine(Id);
-        }*/
+        }
     }
 }

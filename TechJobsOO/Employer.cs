@@ -1,9 +1,15 @@
 ﻿using System;
 namespace TechJobsOO
 {
-    public class Employer
+    public class Employer: JobField
     {
-        public int Id { get; }
+
+        public Employer(string value): base(value)
+        {
+
+        }
+
+/*        public int Id { get; }
         private static int nextId = 1; // static value does not get stored in any specific instance, but instead with the class definition
         public string Value { get; set; }
 
@@ -32,6 +38,6 @@ namespace TechJobsOO
         public override string ToString() //Outputs the string value (name)
         {
             return Value;
-        }
+        }*/
     }
 }
