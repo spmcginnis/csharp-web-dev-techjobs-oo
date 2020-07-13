@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace TechJobsOO
 {
     public class Job
@@ -41,6 +44,37 @@ namespace TechJobsOO
         public override int GetHashCode()
         {
             return HashCode.Combine(Id);
+        }
+
+        public override string ToString()
+        {
+            string noData = "Data not available.";
+
+            Tuple<string, string>[] valuesToPrint =
+                        {   new Tuple<string, string>("ID: ", this.Id.ToString()),
+                            new Tuple<string, string>("Name: ", this.Name.ToString()),
+                            new Tuple<string, string>("Employer: ", this.EmployerName.ToString()),
+                            new Tuple<string, string>("Location: ", this.EmployerLocation.ToString()),
+                            new Tuple<string, string>("Position Type: ", this.JobType.ToString()),
+                            new Tuple<string, string>("Core Competency: ", this.JobCoreCompetency.ToString())   };
+
+            List<string> outputStringList = new List<string>();
+
+            foreach (Tuple<string, string> n in valuesToPrint)
+            {
+                if (n.Item2.Length > 0)
+                {
+                    outputStringList.Add(n.Item1 + n.Item2);
+                }
+                else
+                {
+                    outputStringList.Add(n.Item1 + noData);
+                }
+            }
+
+            string outputString = string.Join("\n", outputStringList);
+
+            return $"\n" + outputString + "\n";
         }
 
 
