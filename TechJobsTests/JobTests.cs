@@ -85,10 +85,10 @@ namespace TechJobsTests
         {
             Job xJob = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
             string[] strLines = xJob.ToString().Split("\n");
-            Assert.IsTrue(strLines[6] == "Core Competency: Data not available.");
+            Assert.IsTrue(strLines[6] == "Core Competency: Data not available");
             for (int i = 2; i < 7; i++)
             {
-                Assert.IsTrue(strLines[i].Contains("Data not available."));
+                Assert.IsTrue(strLines[i].Contains("Data not available"));
             }
         }
 

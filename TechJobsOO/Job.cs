@@ -48,7 +48,7 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            string noData = "Data not available.";
+            string noData = "Data not available";
 
             Tuple<string, string>[] valuesToPrint =
                         {   new Tuple<string, string>("ID: ", this.Id.ToString()),
